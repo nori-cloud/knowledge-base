@@ -4,14 +4,21 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "infisical secrets-manager run --env dev --path /knowledge-base -- next dev",
     "start": "next start",
     "types:check": "next typegen && tsc --noEmit",
     "lint": "biome check",
     "format": "biome format --write"
   },
   "dependencies": {
+    "@ai-sdk/deepseek": "^3.0.88",
+    "@ai-sdk/react": "^4.0.0",
+    "@base-ui/react": "^1.9.0",
+    "@fuma-translate/react": "^1.0.2",
+    "ai": "^7.0.0",
+    "class-variance-authority": "^0.7.1",
     "cn": "^0.5.2",
+    "flexsearch": "^0.8.212",
     "fumadocs-core": "16.19.5",
     "fumadocs-mdx": "15.6.4",
     "fumadocs-ui": "npm:@fumadocs/base-ui@16.19.5",
@@ -19,29 +26,22 @@
     "next": "16.4.6",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "@openrouter/ai-sdk-provider": "^3.0.0",
-    "ai": "^7.0.0",
-    "zod": "^4.6.7",
-    "flexsearch": "^0.8.212",
-    "@ai-sdk/react": "^4.0.0",
-    "@base-ui/react": "^1.9.0",
-    "@fuma-translate/react": "^1.0.2",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "remark-rehype": "^11.1.2",
     "remend": "^1.4.0",
-    "class-variance-authority": "^0.7.1"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.6.6",
     "@tailwindcss/postcss": "^4.3.5",
+    "@types/hast": "^3.0.5",
     "@types/mdx": "^2.0.14",
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "postcss": "^8.5.32",
     "tailwindcss": "^4.3.5",
-    "typescript": "^7.0.2",
-    "@biomejs/biome": "^2.6.6",
-    "@types/hast": "^3.0.5"
+    "typescript": "^7.0.2"
   }
 }
