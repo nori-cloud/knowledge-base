@@ -1,6 +1,6 @@
 ---
-
 name: set-up-knowledge-base
+title: Set up a repository for Knowledge Base
 description: Structure a repository's docs/ folder so Knowledge Base can load and publish it, including the landing page, frontmatter, relative links, and a convention check.
 ---
 
