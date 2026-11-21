@@ -1,8 +1,11 @@
 import { DocsLayout } from "@/components/ai/layout";
 import { baseOptions } from "@/lib/layout.shared";
-import { source } from "@/lib/source";
+import { getSource } from "@/lib/source";
 
-export default function Layout({ children }: LayoutProps<"/docs">) {
+export const dynamic = "force-dynamic";
+
+export default async function Layout({ children }: LayoutProps<"/docs">) {
+  const source = await getSource();
   return (
     <DocsLayout tree={source.getPageTree()} {...baseOptions()}>
       {children}

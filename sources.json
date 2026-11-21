@@ -1,0 +1,14 @@
+[
+  {
+    "repo": "nori-cloud/agents",
+    "ref": "main",
+    "mount": "projects/agents",
+    "title": "Agents"
+  },
+  {
+    "repo": "nori-cloud/actions",
+    "ref": "main",
+    "mount": "projects/actions",
+    "title": "Actions"
+  }
+]

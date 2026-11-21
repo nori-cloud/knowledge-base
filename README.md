@@ -66,7 +66,13 @@ configuration, keeping existing entries:
 }
 ```
 
-Loading remote repositories is not implemented yet; the skill and check come first.
+Remote sources are listed in [`sources.json`](sources.json). Each public GitHub
+repository contributes Markdown from its `docs/` folder under its configured
+mount. The server checks for updates roughly every 10 minutes; pages, search,
+Ask AI, and LLM exports share the refreshed source. GitHub API rate limits may
+require a server-side `GITHUB_TOKEN`. If a refresh fails, the last successful
+copy remains available in that server process; a cold start has no cached copy.
+Remote Markdown is rendered without MDX or raw HTML.
 
 ## How is it delivered?
 
