@@ -2,12 +2,14 @@
   "name": "knowledge-base",
   "version": "0.0.67",
   "private": true,
+  "packageManager": "pnpm@12.21.0",
   "scripts": {
     "build": "next build",
     "dev": "infisical secrets-manager run --env dev --path /knowledge-base -- next dev",
     "start": "next start",
     "types:check": "next typegen && tsc --noEmit",
     "lint": "biome check",
+    "sanity": "pnpm lint && pnpm types:check && pnpm build",
     "format": "biome format --write"
   },
   "dependencies": {

@@ -1,4 +1,5 @@
 version: 1
-general: {}
+general:
+  domain: https://infisical.hoki-sole.ts.net/api
 secrets-management:
-    project-id: 8f481a32-4080-4f2d-9a49-767c412b3a85
+  project-id: ba06b3c1-1db1-4809-a433-74afbb6fafdf
