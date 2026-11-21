@@ -20,6 +20,11 @@ const docs = defineDocs({
 // See https://fumadocs.dev/docs/headless/source-api for more info
 export const source = loader({
   baseUrl: docsRoute,
+  // A skill is installed as SKILL.md, but is published at its folder URL.
+  slugs(_file, next) {
+    const slugs = next();
+    return slugs.at(-1) === "SKILL" ? slugs.slice(0, -1) : slugs;
+  },
   source: docs.toFumadocsSource(),
   plugins: [lucideIconsPlugin()],
 });
