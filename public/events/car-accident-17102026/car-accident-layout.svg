@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="730" viewBox="0 0 1200 730" role="img" aria-labelledby="title description">
+  <title id="title">Car accident — car park layout</title>
+  <desc id="description">An illustrative T-shaped car park layout. My SUV travels uphill along the ramp toward the cross aisle. The other vehicle approaches along the cross aisle and cuts the corner towards the ramp. The approximate collision area is near the ramp exit. Directions and vehicle paths are illustrative, not to scale or real-world compass bearings.</desc>
+  <rect width="1200" height="730" fill="#f8fafc"/>
+  <g font-family="DejaVu Sans, sans-serif" fill="#172b4d">
+    <text x="50" y="54" font-size="32" font-weight="bold">Car accident — car park layout</text>
+    <text x="50" y="87" font-size="18" fill="#475569">Directions and paths are illustrative · Not to scale · Compass directions are not real-world bearings</text>
+
+    <text x="1125" y="48" font-size="16" text-anchor="middle" font-weight="bold">N</text>
+    <path d="M1125 100 V70 M1125 60 L1117 75 L1133 75 Z" fill="#334155" stroke="#334155" stroke-width="3"/>
+
+    <!-- Open ends show that the drawing does not cover the entire car park. -->
+    <path d="M250 140 H420 V300 H1090 V480 H420 V620 H250 Z" fill="#e2e8f0"/>
+    <path d="M250 140 V620 M420 140 V300 H1090 M1090 480 H420 V620" fill="none" stroke="#94a3b8" stroke-width="5" stroke-linejoin="round"/>
+
+    <text x="50" y="165" font-size="23" font-weight="bold">Cross aisle</text>
+    <text x="50" y="194" font-size="17" fill="#475569">North–south</text>
+
+    <text x="680" y="218" font-size="23" font-weight="bold">Ramp</text>
+    <text x="680" y="249" font-size="18" fill="#475569">Uphill towards the cross aisle</text>
+    <text x="680" y="276" font-size="18" fill="#475569">5.6 m wide excluding kerbs · Approx. 30° incline</text>
+
+    <path d="M1010 390 H523" fill="none" stroke="#1565c0" stroke-width="8"/>
+    <path d="M495 390 L523 376 L523 404 Z" fill="#1565c0"/>
+    <text x="830" y="369" font-size="23" font-weight="bold" fill="#1565c0">My SUV</text>
+
+    <path d="M300 585 V490 L458.1 406.6" fill="none" stroke="#c2410c" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M482 394 L452.5 396 L463.7 417.2 Z" fill="#c2410c"/>
+    <text x="50" y="552" font-size="22" font-weight="bold" fill="#9a3412">Other vehicle</text>
+    <text x="50" y="581" font-size="17" fill="#9a3412">Cut the corner</text>
+
+    <circle cx="490" cy="390" r="54" fill="none" stroke="#a16207" stroke-width="4" stroke-dasharray="10 8"/>
+    <path d="M490 336 V238 H515" fill="none" stroke="#a16207" stroke-width="2"/>
+    <text x="520" y="230" font-size="20" font-weight="bold" fill="#854d0e">Approximate</text>
+    <text x="520" y="256" font-size="20" font-weight="bold" fill="#854d0e">collision area</text>
+  </g>
+</svg>

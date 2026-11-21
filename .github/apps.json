@@ -2,6 +2,6 @@
   {
     "app": "knowledge-base",
     "dockerfile": "Dockerfile",
-    "paths": ["src/**", "content/**"]
+    "paths": ["src/**", "content/**", "public/**", "scripts/**"]
   }
 ]

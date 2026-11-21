@@ -7,6 +7,22 @@ const config = {
   output: "standalone",
   reactStrictMode: true,
   allowedDevOrigins: ["devbox"],
+  async redirects() {
+    return [
+      ...["infra", "projects", "cheat-sheet", "journal", "scratchpad"].map(
+        (section) => ({
+          source: `/${section}/:path*`,
+          destination: `/docs/${section}/:path*`,
+          permanent: true,
+        }),
+      ),
+      {
+        source: "/koukou/:path*",
+        destination: "/docs/projects/koukou/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {

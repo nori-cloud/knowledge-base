@@ -22,8 +22,24 @@ Open <http://localhost:3000/docs>. Development injects secrets from
 `dev:/knowledge-base`; no `.env.local` is needed. `DEEPSEEK_API_KEY` is required
 for chat; optional `DEEPSEEK_MODEL` overrides the `deepseek-v4-flash` default.
 
-Run `pnpm sanity` for lint, types, and a production build. These checks do not
+Run `pnpm sanity` for lint, internal content links, types, and a production build. These checks do not
 need secrets.
+
+## Where do I write documentation?
+
+Edit Markdown or MDX directly in `content/docs/`. This is the content source for
+pages, search, AI retrieval, and LLM exports; no external importer or sync is
+needed. Use `title` and optional `description` frontmatter, and `meta.json` for
+navigation. Internal page URLs start with `/docs/`. Mermaid code fences render
+as diagrams with a readable source fallback.
+
+The documents were migrated from `nori-cloud/docs`, including the event
+records and their media. Scratchpad pages retain historical proposals. The
+source Starlight app remains until the migration is merged and verified.
+
+Put approved static files in `public/`; the production image includes them.
+The imported technical pages do not currently require static assets.
+Old technical page URLs redirect to their `/docs/` equivalents.
 
 ## How is it delivered?
 

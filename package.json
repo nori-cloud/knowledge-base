@@ -9,7 +9,8 @@
     "start": "next start",
     "types:check": "next typegen && tsc --noEmit",
     "lint": "biome check",
-    "sanity": "pnpm lint && pnpm types:check && pnpm build",
+    "content:check": "node scripts/check-content.mjs",
+    "sanity": "pnpm lint && pnpm content:check && pnpm types:check && pnpm build",
     "format": "biome format --write"
   },
   "dependencies": {
@@ -18,6 +19,7 @@
     "@base-ui/react": "^1.9.0",
     "@fuma-translate/react": "^1.0.2",
     "ai": "^7.0.0",
+    "beautiful-mermaid": "^1.1.3",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.5.2",
     "flexsearch": "^0.8.212",

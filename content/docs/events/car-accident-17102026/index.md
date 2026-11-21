@@ -1,0 +1,216 @@
+---
+title: Car Accident Record
+description: A structured factual record of a vehicle collision in a private shared car park in New South Wales.
+---
+
+## What am I looking at?
+
+This record describes the accident and includes evidence and my comments. See also:
+
+- [Reference registry](/docs/events/car-accident-17102026/references) — legislation, driving guidance and cases.
+- [Appendix](#appendix) — downloadable documents and links to the evidence.
+
+## How did the accident happened?
+
+The directions below refer to the illustrative diagram, not real-world compass directions.
+
+1. I was driving my SUV uphill from east to west towards the cross aisle, where I planned to turn left.
+2. I was driving near the centre of the ramp. The incline, a black sedan and a pillar limited my visibility of oncoming traffic. In my experience, the common practice in this car park is to stay towards the right when turning left.
+3. The other vehicle approached from south to north along the cross aisle and turned towards the ramp. I think the other driver cut the corner rather than turning as close to the centre of the intersection as possible.
+4. Before I began turning, I noticed the oncoming vehicle and braked immediately. Within seconds, the vehicles collided head-on near the top of the ramp, on the passenger side of my SUV. I felt my SUV move backwards.
+5. I turned off the engine, activated the hazard lights, placed the vehicle in park and engaged the parking brake. I got out, exchanged details with the other driver and called building security for assistance.
+
+### The scene
+
+[![Annotated T-shaped layout showing the shorter ramp arm meeting a cross aisle and the approximate impact area near the ramp exit](/events/car-accident-17102026/car-accident-layout.png?v=clean-arrows)](/events/car-accident-17102026/car-accident-layout.png?v=clean-arrows)
+
+<a href="/events/car-accident-17102026/car-accident-layout.png?v=clean-arrows">View full-size diagram</a> · <a href="/events/car-accident-17102026/car-accident-layout.png" download>Download the layout (PNG)</a> · <a href="/events/car-accident-17102026/car-accident-layout.svg" download>Download the layout (SVG)</a>
+
+| Field | Record |
+| --- | --- |
+| Jurisdiction | New South Wales, Australia |
+| Location | Private shared car park at home, intended for residents |
+| Date and time | 17 October 2026, around 17:00 local time. The dashcam displays approximately 14:04:10 at impact because it is set to a different time zone. |
+| Claim status | Claim submitted |
+
+## Evidence collected for the scene
+
+### At-scene photos
+
+These photographs show the vehicles and damage at the scene.
+
+![Close-up of the vehicles' front corners and damaged bumper](/events/car-accident-17102026/at-scene-01-contact-closeup-Image_20261018175507_8_7.jpg)
+
+<a href="/events/car-accident-17102026/at-scene-01-contact-closeup-Image_20261018175507_8_7.jpg" download>Download this photo</a>
+
+![Side view of the vehicles' front corners together](/events/car-accident-17102026/at-scene-02-contact-side-Image_20261018175509_10_7.jpg)
+
+<a href="/events/car-accident-17102026/at-scene-02-contact-side-Image_20261018175509_10_7.jpg" download>Download this photo</a>
+
+![Front grille and bumper detail](/events/car-accident-17102026/at-scene-03-bumper-detail-Image_20261018175512_11_7.jpg)
+
+<a href="/events/car-accident-17102026/at-scene-03-bumper-detail-Image_20261018175512_11_7.jpg" download>Download this photo</a>
+
+![Wider view of both vehicles beside the ramp](/events/car-accident-17102026/at-scene-04-vehicles-ramp-Image_20261018175514_12_7.jpg)
+
+<a href="/events/car-accident-17102026/at-scene-04-vehicles-ramp-Image_20261018175514_12_7.jpg" download>Download this photo</a>
+
+### At-scene footage
+
+#### Dashcam footage
+
+<video controls playsinline preload="metadata" width="1920" height="1080" style="width: 100%; height: auto;" aria-label="Dashcam footage of the car park incident">
+  <source src="/events/car-accident-17102026/dashcam-footage.mp4" type="video/mp4" />
+  Your browser does not support embedded video. <a href="/events/car-accident-17102026/dashcam-footage.mp4">Download the playback copy</a>.
+</video>
+
+<a href="/events/car-accident-17102026/dashcam-footage-original.mp4" download>Download the original 4K dashcam footage</a>
+
+<a href="/events/car-accident-17102026/dashcam-footage.mp4" download>Download the reduced-resolution dashcam playback copy</a>
+
+#### Car park CCTV (first 18 seconds removed)
+
+<video controls playsinline preload="metadata" width="1920" height="1080" style="width: 100%; height: auto;" aria-label="Car park CCTV playback copy">
+  <source src="/events/car-accident-17102026/car-accident-cctv-playback.mp4?v=trim-18" type="video/mp4" />
+  Your browser does not support embedded video. <a href="/events/car-accident-17102026/car-accident-cctv-playback.mp4?v=trim-18">Download the CCTV playback copy</a>.
+</video>
+
+<a href="/events/car-accident-17102026/car-accident-cctv-playback.mp4?v=trim-18" download>Download the trimmed CCTV playback copy</a>
+
+### Supplementary video
+
+The following video of the car park aisle and ramp area was recorded after the accident.
+
+<video controls playsinline preload="metadata" width="1920" height="1080" style="width: 100%; height: auto;" aria-label="Supplementary video of the car park aisle and ramp">
+  <source src="/events/car-accident-17102026/VID_20261021_180515709.mp4" type="video/mp4" />
+  Your browser does not support embedded video. <a href="/events/car-accident-17102026/VID_20261021_180515709.mp4">Download the supplementary video</a>.
+</video>
+
+<a href="/events/car-accident-17102026/VID_20261021_180515709.mp4" download>Download the supplementary car park video</a>
+
+## Post-accident commentary
+
+### What did I observe?
+
+- I consider simultaneous use of the ramp by two vehicles unsafe because of its narrow width, including when travelling in opposite directions. In practice, vehicles usually take turns using the ramp. This describes my experience, not a confirmed posted give-way rule.
+- There was no obstruction preventing traffic in the aisle from seeing the top of the ramp.
+- The other driver was wearing slippers with no strap to secure them to the foot, and a full-face covering.
+
+### What have the insurance representatives said?
+
+My discussions with the insurance representatives have raised these points of disagreement:
+
+- **Inconsistent fault assessments:** Two representatives said the other driver cut the corner and was at fault. Other representatives said responsibility was shared 50/50 because they believed I was on the wrong side of the ramp. No other explanation was given. A representative confirmed multiple times that this was not the insurer’s legal position.
+- **Whether the ramp is a multi-lane road:** Representatives have said the two arrows make it a multi-lane road; I disagree.
+- **Whether driving farther left was practicable:** We disagree about how far left I could practically drive in the circumstances, including the restricted visibility. I have raised [rule 129](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758#sec.129), [rule 132](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758#sec.132) and [rule 133](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758#sec.133). The representatives have not explained how driving farther left would have avoided the collision.
+
+When I raised the [NSW Road Rules 2014](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758), the representatives seemed reluctant to discuss how the rules applied to this accident. I found this shocking.
+
+[Rule 129](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758#sec.129) expressly excludes road-related areas. If this ramp is a road-related area, [rule 132](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758#sec.132) does not exclude it merely for that reason. Rule 132 requires keeping left of centre on a two-way road without a dividing line or median strip, subject to exceptions. Under [rule 133](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758#sec.133), the width-or-condition exception requires both that keeping left of centre is not practicable and that driving to the right can be done safely. Whether those rules apply depends on the ramp's classification and the conditions in the rules. Whether a different position would have avoided the collision remains unresolved.
+
+I have not yet recorded the dates or exact wording of these discussions, or what material the representatives reviewed. I’m working on requesting transcripts of all my calls with the insurer so I can review what was said.
+
+### Why do I think this is a two-way single lane?
+
+I think this is a **two-way single lane road** because of its markings and the space available on the ramp.
+
+#### Road rule dictionary
+
+The ramp has arrows indicating travel in both directions, but no marked centre line. My understanding is that opposing arrows do not, on their own, make the ramp a multi-lane road. The exact definition of a multi-lane road still needs direct verification. I would like advice on how the definitions in the [Road Rules 2014 Dictionary](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758#dict) apply to this ramp.
+
+#### Safe distance guideline
+
+The NSW [Hazard Perception Handbook](https://www.nsw.gov.au/sites/default/files/2021-08/hazard-perception-handbook.pdf#page=34) (pages 32–33) recommends trying to keep at least 1 metre between your vehicle and other moving or parked vehicles on either side. It specifically includes oncoming vehicles passing on narrow roads.
+
+The NSW publication [A Guide to the Driving Test](https://www.nsw.gov.au/sites/default/files/2021-08/guide-to-driving-test.pdf#page=16) (page 14) gives broader buffering guidance: keep as much space to the sides as practical, aim for at least 1 metre from **other vehicles and hazards**, and slow down where a safe space cannot be maintained.
+
+The examples below assume two SUVs, each **2 metres wide without mirrors** and **2.2 metres wide including unfolded mirrors**. These are illustrative examples. They also use the reported ramp width of 5.6 metres and a single shared gap between the vehicles.
+
+The [Testing Officer's Manual](https://www.nsw.gov.au/sites/default/files/2021-09/testing-officers-manual.pdf#page=30) (section C6) measures the distance from an oncoming vehicle without including mirrors. The examples below show distances both with and without mirrors.
+
+| Clearance example | Mirrors | Total width needed | Comparison with the reported 5.6-metre clear width |
+| --- | --- | --- | --- |
+| A 1-metre gap between the SUVs | Excluded | 5 metres | Leaves 60 cm in total between the vehicle bodies and kerb faces; mirrors are not included in this clearance |
+| A 1-metre gap between the SUVs | Included | 5.4 metres | Leaves 20 cm in total between the vehicles, including mirrors, and kerb faces, or 10 cm at each side if shared evenly |
+| A 1-metre gap between the SUVs, plus an assumed 1-metre gap to each kerb face | Excluded | 7 metres | Exceeds the reported clear width by 1.4 metres |
+| A 1-metre gap between the SUVs, plus an assumed 1-metre gap to each kerb face | Included | 7.4 metres | Exceeds the reported clear width by 1.8 metres |
+
+On these assumptions, there is not enough room for a 1-metre gap between the vehicles **and** a 1-metre gap at each side. A 1-metre gap between the vehicles, including mirrors, could fit if they were straight and parallel, but there would be very little room left beside them.
+
+### Why did I choose my driving position at the time of accident?
+
+The photos show that from the right-hand position I could see more of the aisle to my left. I chose my position to improve my view of approaching traffic, make my SUV more visible to drivers in the aisle, and leave more space between my SUV and oncoming traffic.
+
+In my experience, drivers travelling both up and down the ramp generally drive near the centre.
+
+The pillar and parked black sedan restricted my view from farther left at the time of the accident. These photos were taken afterwards, when the sedan was no longer there, so visibility during the accident was worse than the photos show. I have grouped the photos by where I positioned the vehicle.
+
+#### Right side of the ramp
+
+![Cabin and forward view toward the cross aisle](/events/car-accident-17102026/right-01-cabin-IMG_20261022_100905651.jpg)
+
+<a href="/events/car-accident-17102026/right-01-cabin-IMG_20261022_100905651.jpg" download>Download this photo</a>
+
+![Forward view with the level 2 pillar](/events/car-accident-17102026/right-02-forward-IMG_20261022_100908680.jpg)
+
+<a href="/events/car-accident-17102026/right-02-forward-IMG_20261022_100908680.jpg" download>Download this photo</a>
+
+![Wider view of the camera display](/events/car-accident-17102026/right-03-camera-display-IMG_20261022_101033363.jpg)
+
+<a href="/events/car-accident-17102026/right-03-camera-display-IMG_20261022_101033363.jpg" download>Download this photo</a>
+
+![Cabin view with the side-camera image](/events/car-accident-17102026/right-04-side-camera-IMG_20261022_101040926.jpg)
+
+<a href="/events/car-accident-17102026/right-04-side-camera-IMG_20261022_101040926.jpg" download>Download this photo</a>
+
+#### Left side of the ramp
+
+![Forward view with the reverse-camera display](/events/car-accident-17102026/left-01-reverse-camera-IMG_20261022_100933433.jpg)
+
+<a href="/events/car-accident-17102026/left-01-reverse-camera-IMG_20261022_100933433.jpg" download>Download this photo</a>
+
+![Alternate forward view with the camera display](/events/car-accident-17102026/left-02-forward-IMG_20261022_100940519.jpg)
+
+<a href="/events/car-accident-17102026/left-02-forward-IMG_20261022_100940519.jpg" download>Download this photo</a>
+
+![Close-up of the surround-view camera display](/events/car-accident-17102026/left-03-camera-display-IMG_20261022_100953146.jpg)
+
+<a href="/events/car-accident-17102026/left-03-camera-display-IMG_20261022_100953146.jpg" download>Download this photo</a>
+
+
+### How do I think the practicable distance from the left can be assessed?
+
+If [rule 129](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758#sec.129) applies, it does not specify a fixed distance from the left edge. I think it would be useful to compare the view and available space from a position farther left with those from my position near the centre, taking into account the hazards and approach speed. The driving-test guide's buffering advice and its [limited-vision guidance on page 24](https://www.nsw.gov.au/sites/default/files/2021-08/guide-to-driving-test.pdf#page=26) could help with this assessment.
+
+| Factor | Evidence I think would be useful for this ramp |
+| --- | --- |
+| Physical clearance | Measure tyre and body clearance to the kerb, and body/mirror clearance to the pillar and sedan; distinguish objects beside the driving path from objects that only obscure the view |
+| Seeing and being seen | Compare views from the ramp and both cross-aisle approaches at driver-eye height for farther-left and reported near-centre positions; record where each vehicle first becomes visible to the other driver |
+| Speed and stopping | Establish the approach speed and visible clear distance; consider whether a farther-left path could be used with a slower approach or a stop |
+| Opposing traffic | Check the space left for an approaching vehicle and whether each driver could stop before the paths conflicted |
+| My position on the ramp | Establish how far and for how long my vehicle was away from the left edge, whether it crossed the centre, and whether it could return farther left after passing the hazard |
+
+### Are there any external references to this documentation?
+
+- **Road Rules 2014:** [Application to roads and road-related areas](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758#sec.11), [right turns](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758#sec.33), [T-intersections](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758#sec.73), and keeping left under [rule 129](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758#sec.129), [rule 132](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758#sec.132) and [rule 133](https://legislation.nsw.gov.au/view/html/inforce/current/sl-2014-0758#sec.133).
+- **Driving guidance:** [Hazard Perception Handbook](https://www.nsw.gov.au/sites/default/files/2021-08/hazard-perception-handbook.pdf#page=34), [A Guide to the Driving Test](https://www.nsw.gov.au/sites/default/files/2021-08/guide-to-driving-test.pdf), and [Testing Officer's Manual](https://www.nsw.gov.au/sites/default/files/2021-09/testing-officers-manual.pdf#page=30).
+- **Related cases:** [Sibley v Kais](https://www.austlii.edu.au/cgi-bin/viewdoc/au/cases/cth/HCA/1967/43.html), [Nievas v Mohammed](https://www.caselaw.nsw.gov.au/decision/595c4e09e4b058596cba8490), [Johnson v Savage](https://www.caselaw.nsw.gov.au/decision/549fab113004262463b62f6d), and [BIG Transport v Hi-Tech Heavy Haulage](https://www.caselaw.nsw.gov.au/decision/17c0c9a43af1f02bab84a554). Their facts differ from this accident.
+
+## Appendix
+
+### Documents
+
+- <a href="/docs/events/car-accident-17102026.md" download>Accident record (Markdown)</a>
+- <a href="/docs/events/car-accident-17102026/references.md" download>Reference registry (Markdown)</a>
+
+The Markdown downloads are served directly from the site. This record may change; save a dated copy when a fixed version is needed.
+
+### Insurance documents
+
+- <a href="/events/car-accident-17102026/Car_PDS_Part_A_Budget_Direct_0923.pdf" download>Budget Direct Car Insurance Product Disclosure Statement — Part A</a>
+- <a href="/events/car-accident-17102026/Car_Supplementary_PDS_Budget_Direct_December2025.pdf" download>Budget Direct Supplementary Product Disclosure Statement — December 2025</a>
+- <a href="/events/car-accident-17102026/Financial_Services_Guide_Budget_Direct.pdf" download>Budget Direct Financial Services Guide</a>
+
+### Evidence
+
+Download links are next to the [layout illustration](#the-scene), [at-scene photos](#at-scene-photos), [footage](#at-scene-footage), [supplementary video](#supplementary-video), and [supplementary photos](#why-did-i-choose-my-driving-position-at-the-time-of-accident).
