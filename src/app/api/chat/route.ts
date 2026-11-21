@@ -10,7 +10,7 @@ import {
 } from "ai";
 import { Document, type DocumentData } from "flexsearch";
 import { z } from "zod";
-import { source } from "@/lib/source";
+import { getSource } from "@/lib/source";
 import type { ChatUIMessage, SearchTool } from "../../../components/ai/search";
 
 interface CustomDocument extends DocumentData {
@@ -19,9 +19,14 @@ interface CustomDocument extends DocumentData {
   description: string;
   content: string;
 }
-const searchServer = createSearchServer();
+const searchServers = new WeakMap<
+  Awaited<ReturnType<typeof getSource>>,
+  Promise<Document<CustomDocument>>
+>();
 
-async function createSearchServer() {
+async function createSearchServer(
+  source: Awaited<ReturnType<typeof getSource>>,
+) {
   const search = new Document<CustomDocument>({
     document: {
       id: "url",
@@ -105,6 +110,13 @@ const searchTool = tool({
     limit: z.number().int().min(1).max(100).default(10),
   }),
   async execute({ query, limit }): Promise<InferToolOutput<SearchTool>> {
+    const source = await getSource();
+    let searchServer = searchServers.get(source);
+    if (!searchServer) {
+      searchServer = createSearchServer(source);
+      searchServers.set(source, searchServer);
+      searchServer.catch(() => searchServers.delete(source));
+    }
     const search = await searchServer;
     return await search.searchAsync(query, {
       limit,

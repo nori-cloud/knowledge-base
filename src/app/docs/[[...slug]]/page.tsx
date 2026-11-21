@@ -11,10 +11,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getMDXComponents } from "@/components/mdx";
 import { getPageImageUrl, gitConfig } from "@/lib/shared";
-import { source } from "@/lib/source";
+import { getSource } from "@/lib/source";
 
 export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   const params = await props.params;
+  const source = await getSource();
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
@@ -31,7 +32,10 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
         <MarkdownCopyButton markdownUrl={markdownUrl} />
         <ViewOptionsPopover
           markdownUrl={markdownUrl}
-          githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${encodeURI(page.path)}`}
+          githubUrl={
+            page.data.sourceUrl ??
+            `https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${encodeURI(page.path)}`
+          }
         />
       </div>
       <DocsBody>
@@ -46,14 +50,11 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
   );
 }
 
-export async function generateStaticParams() {
-  return source.generateParams();
-}
-
 export async function generateMetadata(
   props: PageProps<"/docs/[[...slug]]">,
 ): Promise<Metadata> {
   const params = await props.params;
+  const source = await getSource();
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
