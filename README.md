@@ -3,8 +3,8 @@
 ## What am I looking at?
 
 A Fumadocs site built with Next.js, with DeepSeek-powered documentation chat.
-It replaces the `docs` application in `nori-cloud/apps`, using the existing
-hostnames and port 4321.
+It deploys as `knowledge-base` in `nori-cloud/apps`, replacing the former `docs`
+application while keeping the `docs` hostnames and port 4321.
 
 ## How do I run it?
 
@@ -30,11 +30,11 @@ need secrets.
 The app matrix lives in [`.github/apps.json`](.github/apps.json). Shared actions
 are pinned to reviewed commit `a2e14326bca943a3b1cd129e3fa061d73616a806`.
 
-| Workflow     | Result                                                                       |
-| ------------ | ---------------------------------------------------------------------------- |
-| CI           | PR checks and image build without publishing                                 |
-| CD           | Checks, SHA-tagged image publication, dev overlay and `docs-dev` tag updates |
-| Prod Promote | Select `docs`; reuse an existing image, update prod, tag, and release        |
+| Workflow     | Result                                                                                 |
+| ------------ | -------------------------------------------------------------------------------------- |
+| CI           | PR checks and image build without publishing                                           |
+| CD           | Checks, SHA-tagged image publication, dev overlay and `knowledge-base-dev` tag updates |
+| Prod Promote | Select `knowledge-base`; reuse an existing image, update prod, tag, and release        |
 
 CD compares against its last successful push run, including missed deliveries.
 Root files and `.github/` changes rebuild the app, as do changes to its listed
@@ -42,7 +42,7 @@ source directories. CD and promotion share a concurrency group; other
 repositories writing to GitOps still require coordination.
 
 For production promotion, run the workflow from `main`. Leave `sha` blank to
-follow `docs-dev`, or supply a full commit SHA already published to GHCR.
+follow `knowledge-base-dev`, or supply a full commit SHA already published to GHCR.
 Start with `dry-run`; this still reads GHCR and the GitOps repository.
 
 ## What must be configured before cutover?
@@ -50,16 +50,16 @@ Start with `dry-run`; this still reads GHCR and the GitOps repository.
 - Allow this repository's workflows to use the private `nori-cloud/actions`.
 - Add `GITOPS_APP_ID` and `GITOPS_APP_PRIVATE_KEY` as repository or accessible
   organization secrets. The App needs Contents write access to `nori-cloud/apps`.
-- Grant this repository Actions write access to the existing GHCR `docs`
-  package, and allow `GITHUB_TOKEN` packages write and environment-tag updates.
-- Disable the old docs repository's delivery and promotion workflows before
-  enabling this pipeline. Both publish `ghcr.io/nori-cloud/docs` and update the
-  same overlays.
-- Prepare the GitOps changes under `docs/base`, preserving both current image
-  pins until the first successful delivery. Publish a Knowledge Base image,
-  then apply its matching GitOps configuration and image pin together.
+- Allow `GITHUB_TOKEN` packages write and environment-tag updates. Images publish
+  to `ghcr.io/nori-cloud/knowledge-base`, separate from the old `docs` package.
+- Disable the old docs repository's delivery and promotion workflows during
+  cutover; its former overlay paths will no longer exist.
+- Prepare the GitOps changes under `knowledge-base/base`. Both overlays still
+  carry legacy docs tags until a Knowledge Base image is published. Replace
+  them with published Knowledge Base SHAs before syncing either environment.
+  Coordinate the first image-pin update with committing the renamed directory.
 - Put `DEEPSEEK_API_KEY` at `/knowledge-base` in both Infisical environments.
-  The dedicated `docs-secret-store` supplies `docs-secret` through External
+  The dedicated `knowledge-base-secret-store` supplies `knowledge-base-secret` through External
   Secrets. Its endpoint is `https://infisical.hoki-sole.ts.net`; confirm the
   operator can resolve and reach this tailnet address.
 - Reuse the existing `infisical-universal-auth` Secret in each environment
@@ -67,8 +67,11 @@ Start with `dry-run`; this still reads GHCR and the GitOps repository.
   `/knowledge-base`. The store's `secretsPath` is not an access-control boundary;
   the shared identity retains its existing permissions.
   Restart application pods after rotating the DeepSeek key.
-- Keep the existing GHCR pull credentials and Argo CD applications available.
-  Verify the dev rollout before manually promoting production.
+- Keep the existing GHCR pull credentials available. Update the existing Argo CD
+  Applications' source paths to `knowledge-base/overlays/dev` and
+  `knowledge-base/overlays/prod`, then review removal of the old docs workloads.
+  Hostnames remain `docs.hoki-sole.ts.net` and `docs.norriswu.me`. Verify the dev
+  rollout before manually promoting production.
 
 Only runtime pods receive the API key. Docker excludes local environment files
 and Infisical configuration; builds and CI do not fetch application secrets.

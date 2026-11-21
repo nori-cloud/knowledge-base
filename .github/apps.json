@@ -1,6 +1,6 @@
 [
   {
-    "app": "docs",
+    "app": "knowledge-base",
     "dockerfile": "Dockerfile",
     "paths": ["src/**", "content/**"]
   }

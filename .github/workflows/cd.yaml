@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: gitops-docs
+  group: gitops-knowledge-base
   cancel-in-progress: false
 
 jobs:
