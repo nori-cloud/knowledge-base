@@ -1,13 +1,12 @@
 import { createGetUrl } from "fumadocs-core/source";
 
-export const appName = "My App";
+export const appName = "Nori Cloud Knowledge Base";
 export const docsRoute = "/docs";
 export const docsImageRoute = "/og/docs";
 
-// fill this with your actual GitHub info, for example:
 export const gitConfig = {
-  user: "fuma-nama",
-  repo: "fumadocs",
+  user: "nori-cloud",
+  repo: "knowledge-base",
   branch: "main",
 };
 

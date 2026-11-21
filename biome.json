@@ -24,6 +24,12 @@
       "react": "recommended"
     }
   },
+  "overrides": [
+    {
+      "includes": ["content/docs/**/*.md", "content/docs/**/*.mdx"],
+      "formatter": { "enabled": false }
+    }
+  ],
   "assist": {
     "actions": {
       "source": {
