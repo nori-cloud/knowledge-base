@@ -45,9 +45,9 @@ Old technical page URLs redirect to their `/docs/` equivalents.
 
 A source repository puts Markdown under `docs/` with a required `index.md`, `title`
 frontmatter, relative links, and no raw HTML or MDX. The
-[`set-up-knowledge-base` skill](content/docs/projects/knowledge-base/set-up-knowledge-base/SKILL.md) describes the
+[`set-up-knowledge-base` skill](content/docs/projects/knowledge-base/skills/set-up-knowledge-base/SKILL.md) describes the
 convention and how to apply it, and is also the published page
-[Set up a repository for Knowledge Base](/docs/projects/knowledge-base/set-up-knowledge-base),
+[Set up a repository for Knowledge Base](/docs/projects/knowledge-base/skills/set-up-knowledge-base),
 so there is one copy. Check a repository with:
 
 ```sh
@@ -61,7 +61,7 @@ configuration, keeping existing entries:
 {
   "$schema": "https://opencode.ai/config.json",
   "skills": [
-    "https://raw.githubusercontent.com/nori-cloud/knowledge-base/main/content/docs/projects/knowledge-base/"
+    "https://raw.githubusercontent.com/nori-cloud/knowledge-base/main/content/docs/projects/knowledge-base/skills/"
   ]
 }
 ```
