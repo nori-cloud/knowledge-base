@@ -46,7 +46,9 @@ Old technical page URLs redirect to their `/docs/` equivalents.
 A source repository puts Markdown under `docs/` with a required `index.md`, `title`
 frontmatter, relative links, and no raw HTML or MDX. The
 [`set-up-knowledge-base` skill](skills/set-up-knowledge-base/SKILL.md) describes the
-convention and how to apply it. Check a repository with:
+convention and how to apply it, and is published as the page
+[Set up a repository for Knowledge Base](content/docs/projects/knowledge-base/set-up-knowledge-base.mdx),
+which includes the skill file so there is one copy. Check a repository with:
 
 ```sh
 node scripts/check-source-docs.mjs <path-to-repository>
