@@ -41,6 +41,31 @@ Put approved static files in `public/`; the production image includes them.
 The imported technical pages do not currently require static assets.
 Old technical page URLs redirect to their `/docs/` equivalents.
 
+## How do other repositories publish here?
+
+A source repository puts Markdown under `docs/` with a required `index.md`, `title`
+frontmatter, relative links, and no raw HTML or MDX. The
+[`set-up-knowledge-base` skill](skills/set-up-knowledge-base/SKILL.md) describes the
+convention and how to apply it. Check a repository with:
+
+```sh
+node scripts/check-source-docs.mjs <path-to-repository>
+```
+
+Install the skill by adding this catalog to the `skills` array in your OpenCode
+configuration, keeping existing entries:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "skills": [
+    "https://raw.githubusercontent.com/nori-cloud/knowledge-base/main/skills/"
+  ]
+}
+```
+
+Loading remote repositories is not implemented yet; the skill and check come first.
+
 ## How is it delivered?
 
 The app matrix lives in [`.github/apps.json`](.github/apps.json). Shared actions
