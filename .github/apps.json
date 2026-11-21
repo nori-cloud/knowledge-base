@@ -1,0 +1,7 @@
+[
+  {
+    "app": "docs",
+    "dockerfile": "Dockerfile",
+    "paths": ["src/**", "content/**"]
+  }
+]

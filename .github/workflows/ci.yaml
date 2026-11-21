@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sanity-check:
+    name: Sanity Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: nori-cloud/actions/setup@a2e14326bca943a3b1cd129e3fa061d73616a806
+      - run: pnpm sanity
+
+  detect-changes:
+    name: Detect Changes
+    runs-on: ubuntu-latest
+    outputs:
+      changed_apps: ${{ steps.detect.outputs.changed_apps }}
+      has-changes: ${{ steps.detect.outputs.has-changes }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: nori-cloud/actions/detect-changes@a2e14326bca943a3b1cd129e3fa061d73616a806
+        id: detect
+        with:
+          app-list-file: .github/apps.json
+          base: ${{ github.event.pull_request.base.sha || '' }}
+          include-root-changes: "true"
+
+  build:
+    name: Build (${{ matrix.app }})
+    needs: detect-changes
+    if: needs.detect-changes.outputs.has-changes == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJson(needs.detect-changes.outputs.changed_apps) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: nori-cloud/actions/build-image@a2e14326bca943a3b1cd129e3fa061d73616a806
+        with:
+          app: ${{ matrix.app }}
+          dockerfile: ${{ matrix.dockerfile }}
+          push: "false"

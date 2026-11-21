@@ -1,7 +1,9 @@
-import { docsLlms } from '@/lib/source';
+import { docsLlms } from "@/lib/source";
 
 export const revalidate = false;
 
 export async function GET() {
-  return (await docsLlms.serve('/llms.txt'))!;
+  return (
+    (await docsLlms.serve("/llms.txt")) ?? new Response(null, { status: 404 })
+  );
 }

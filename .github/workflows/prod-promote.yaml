@@ -1,0 +1,126 @@
+name: Prod Promote
+
+on:
+  workflow_dispatch:
+    inputs:
+      docs:
+        description: Promote docs
+        type: boolean
+        default: false
+      sha:
+        description: Full commit SHA to promote (blank follows docs-dev)
+        type: string
+        default: ""
+      description:
+        description: Optional release note
+        type: string
+        default: ""
+      dry-run:
+        description: Preview without changing overlays, tags, or releases
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gitops-docs
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    outputs:
+      apps: ${{ steps.prepare.outputs.apps }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Prepare targets
+        id: prepare
+        env:
+          SHA: ${{ inputs.sha }}
+          PROMOTE_DOCS: ${{ inputs.docs }}
+          IMAGE_OWNER: ${{ github.repository_owner }}
+        run: |
+          if [ "${GITHUB_REF}" != "refs/heads/main" ]; then
+            echo "::error::Run production promotion from main"
+            exit 1
+          fi
+          if [ "${PROMOTE_DOCS}" != "true" ]; then
+            echo "::error::Select docs to promote"
+            exit 1
+          fi
+          app=$(jq -er 'if length == 1 then .[0].app else error("Expected one app") end' .github/apps.json)
+          if [ -n "${SHA}" ]; then
+            resolved="${SHA}"
+          else
+            resolved=$(git rev-parse "refs/tags/${app}-dev^{commit}")
+          fi
+          if [[ ! "${resolved}" =~ ^[0-9a-f]{40}$ ]] || ! git cat-file -e "${resolved}^{commit}"; then
+            echo "::error::Expected a full existing commit SHA"
+            exit 1
+          fi
+          if ! git merge-base --is-ancestor "${resolved}" origin/main; then
+            echo "::error::The commit must belong to main"
+            exit 1
+          fi
+          image="ghcr.io/${IMAGE_OWNER}/${app}:${resolved}"
+          docker manifest inspect "${image}" > /dev/null
+          jq -cn --arg app "${app}" --arg sha "${resolved}" '[{app:$app,sha:$sha}]' \
+            | sed 's/^/apps=/' >> "${GITHUB_OUTPUT}"
+
+  promote:
+    name: Promote (${{ matrix.app }})
+    needs: prepare
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include: ${{ fromJson(needs.prepare.outputs.apps) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: nori-cloud/actions/gitops-update-overlay@a2e14326bca943a3b1cd129e3fa061d73616a806
+        with:
+          app: ${{ matrix.app }}
+          tag: ${{ matrix.sha }}
+          overlay: prod
+          dry-run: ${{ inputs.dry-run }}
+          app-id: ${{ secrets.GITOPS_APP_ID }}
+          private-key: ${{ secrets.GITOPS_APP_PRIVATE_KEY }}
+      - uses: nori-cloud/actions/move-tag@a2e14326bca943a3b1cd129e3fa061d73616a806
+        id: tag
+        with:
+          tag: ${{ matrix.app }}-prod
+          sha: ${{ matrix.sha }}
+          description: ${{ inputs.description }}
+          dry-run: ${{ inputs.dry-run }}
+      - name: Create GitHub Release
+        if: ${{ !inputs.dry-run }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          APP: ${{ matrix.app }}
+          SHA: ${{ matrix.sha }}
+          CHRONO_TAG: ${{ steps.tag.outputs.chrono-tag }}
+          DESCRIPTION: ${{ inputs.description }}
+          IMAGE_OWNER: ${{ github.repository_owner }}
+        run: |
+          NOTES="${DESCRIPTION:-Promoted from dev}
+
+          ## Images
+          - ghcr.io/${IMAGE_OWNER}/${APP}:${SHA}"
+          gh release create "${CHRONO_TAG}" --title "${APP}" \
+            --target "${SHA}" --notes "${NOTES}" --latest

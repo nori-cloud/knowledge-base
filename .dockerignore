@@ -1,0 +1,9 @@
+.git
+.github
+.next
+.source
+node_modules
+.env*
+*.pem
+*.tsbuildinfo
+.infisical.yaml
