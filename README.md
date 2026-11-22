@@ -80,6 +80,13 @@ interval, in milliseconds. It defaults to `600000` (10 minutes). For example,
 set it to `60000` for one minute. Configuration is validated at server startup;
 restart the process after changing environment variables.
 
+## How do agents connect?
+
+The read-only MCP server lists, searches, and reads docs at
+`https://docs.hoki-sole.ts.net/api/mcp`. It is enabled in the tailnet-only dev
+deployment. Elsewhere it is disabled by default: only set `MCP_ENABLED=true`
+behind a trusted private network. It does not provide its own authentication.
+
 ## How is it delivered?
 
 The app matrix lives in [`.github/apps.json`](.github/apps.json). Shared actions

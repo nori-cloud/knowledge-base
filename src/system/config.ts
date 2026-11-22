@@ -4,6 +4,10 @@ const environmentSchema = z.object({
   DEEPSEEK_API_KEY: z.string().min(1).optional(),
   DEEPSEEK_MODEL: z.string().min(1).default("deepseek-v4-flash"),
   GITHUB_TOKEN: z.string().min(1).optional(),
+  MCP_ENABLED: z
+    .enum(["true", "false"])
+    .default("false")
+    .transform((value) => value === "true"),
   SOURCE_REFRESH_INTERVAL_MS: z
     .string()
     .regex(/^[1-9]\d*$/, "Must be a positive integer in milliseconds")

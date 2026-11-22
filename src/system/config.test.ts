@@ -8,6 +8,7 @@ test("uses defaults without requiring secrets", () => {
   assert.equal(config.DEEPSEEK_MODEL, "deepseek-v4-flash");
   assert.equal(config.DEEPSEEK_API_KEY, undefined);
   assert.equal(config.GITHUB_TOKEN, undefined);
+  assert.equal(config.MCP_ENABLED, false);
 });
 
 test("accepts configured values", () => {
@@ -16,11 +17,17 @@ test("accepts configured values", () => {
     DEEPSEEK_API_KEY: "test-key",
     DEEPSEEK_MODEL: "custom-model",
     GITHUB_TOKEN: "test-token",
+    MCP_ENABLED: "true",
   });
   assert.equal(config.SOURCE_REFRESH_INTERVAL_MS, 30_000);
   assert.equal(config.DEEPSEEK_MODEL, "custom-model");
   assert.equal(config.DEEPSEEK_API_KEY, "test-key");
   assert.equal(config.GITHUB_TOKEN, "test-token");
+  assert.equal(config.MCP_ENABLED, true);
+});
+
+test("rejects invalid MCP settings", () => {
+  assert.throws(() => parseConfig({ MCP_ENABLED: "yes" }));
 });
 
 test("rejects invalid refresh intervals", () => {
