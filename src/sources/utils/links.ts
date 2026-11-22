@@ -1,14 +1,5 @@
 import { posix } from "node:path";
-
-export interface LinkContext {
-  /** `owner/name` of the source repository. */
-  repo: string;
-  ref: string;
-  /** Where the repository is mounted, such as `projects/agents`. */
-  mount: string;
-  /** Base URL of the docs site, such as `/docs`. */
-  baseUrl: string;
-}
+import type { LinkContext } from "../models";
 
 const absolute = /^[a-z][a-z0-9+.-]*:|^\/\/|^#|^\//i;
 

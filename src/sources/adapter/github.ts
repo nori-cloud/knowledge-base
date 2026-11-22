@@ -1,48 +1,19 @@
 import { createCompiler } from "@fumadocs/mdx-remote";
 import { structure } from "fumadocs-core/mdx-plugins/remark-structure";
-import { z } from "zod";
-import { type LinkContext, rewriteLink } from "./links";
-import type { DocData, DocFile, SourceAdapter } from "./types";
+import {
+  type DocData,
+  type DocFile,
+  type GitHubAdapterOptions,
+  githubFrontmatterSchema,
+  githubMetaSchema,
+  githubTreeSchema,
+  type LinkContext,
+  type MarkdownNode,
+  type SourceAdapter,
+} from "../models";
+import { rewriteLink } from "../utils/links";
 
-export interface GitHubAdapterOptions {
-  /** `owner/name` */
-  repo: string;
-  ref: string;
-  mount: string;
-  /** Title of the mounted folder when the repository has no `docs/meta.json` title. */
-  title: string;
-  baseUrl: string;
-  token?: string;
-}
-
-interface Node {
-  type: string;
-  url?: string;
-  lang?: string | null;
-  value?: string;
-  children?: Node[];
-  data?: Record<string, unknown>;
-}
-
-const frontmatter = z.object({
-  title: z.string().min(1),
-  description: z.string().optional(),
-});
-
-const meta = z.object({
-  title: z.string().optional(),
-  description: z.string().optional(),
-  pages: z.array(z.string()).optional(),
-  defaultOpen: z.boolean().optional(),
-  collapsible: z.boolean().optional(),
-});
-
-const treeResponse = z.object({
-  truncated: z.boolean().optional(),
-  tree: z.array(z.object({ path: z.string(), type: z.string() })),
-});
-
-function visit(node: Node, callback: (node: Node) => void) {
+function visit(node: MarkdownNode, callback: (node: MarkdownNode) => void) {
   callback(node);
   for (const child of node.children ?? []) visit(child, callback);
 }
@@ -64,7 +35,7 @@ export function githubAdapter(options: GitHubAdapterOptions): SourceAdapter {
   let last: { sha: string; files: DocFile[] } | undefined;
 
   function remarkSourceContent() {
-    return (tree: Node, file: { path?: string }) => {
+    return (tree: MarkdownNode, file: { path?: string }) => {
       const from = file.path ?? "index.md";
       visit(tree, (node) => {
         if (
@@ -115,7 +86,7 @@ export function githubAdapter(options: GitHubAdapterOptions): SourceAdapter {
         source: raw,
         filePath: relative,
       });
-      const data = frontmatter.parse(compiled.frontmatter);
+      const data = githubFrontmatterSchema.parse(compiled.frontmatter);
       const body = raw.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "");
       return {
         type: "page",
@@ -144,7 +115,7 @@ export function githubAdapter(options: GitHubAdapterOptions): SourceAdapter {
       return {
         type: "meta",
         path: relative,
-        data: meta.parse(JSON.parse(raw)),
+        data: githubMetaSchema.parse(JSON.parse(raw)),
       };
     } catch (error) {
       throw new Error(`Could not load ${repo}:${path}`, { cause: error });
@@ -152,7 +123,7 @@ export function githubAdapter(options: GitHubAdapterOptions): SourceAdapter {
   }
 
   async function load(sha: string): Promise<DocFile[]> {
-    const tree = treeResponse.parse(
+    const tree = githubTreeSchema.parse(
       await (
         await get(
           `https://api.github.com/repos/${repo}/git/trees/${sha}?recursive=1`,

@@ -57,7 +57,7 @@ Order and naming follow Fumadocs conventions: `index.md` is a folder's landing p
 ## How is the repository published?
 
 Knowledge Base owns where each repository appears. Register it by adding an entry to
-Knowledge Base's `sources.json` with the repository, branch, and mount path, such as
+Knowledge Base's `src/sources/factory.ts` with the repository, branch, and mount path, such as
 `nori-cloud/actions` mounted at `projects/actions`. That is a separate pull request
 in Knowledge Base; never invent mount paths in the source repository.
 

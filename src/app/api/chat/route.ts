@@ -1,4 +1,4 @@
-import { deepSeek } from "@ai-sdk/deepseek";
+import { createDeepSeek } from "@ai-sdk/deepseek";
 import {
   convertToModelMessages,
   createUIMessageStreamResponse,
@@ -11,6 +11,7 @@ import {
 import { Document, type DocumentData } from "flexsearch";
 import { z } from "zod";
 import { getSource } from "@/lib/source";
+import { config } from "@/system/config";
 import type { ChatUIMessage, SearchTool } from "../../../components/ai/search";
 
 interface CustomDocument extends DocumentData {
@@ -77,7 +78,9 @@ export async function POST(req: Request) {
   const reqJson = await req.json();
 
   const result = streamText({
-    model: deepSeek(process.env.DEEPSEEK_MODEL ?? "deepseek-v4-flash"),
+    model: createDeepSeek({ apiKey: config.DEEPSEEK_API_KEY })(
+      config.DEEPSEEK_MODEL,
+    ),
     stopWhen: stepCountIs(5),
     tools: {
       search: searchTool,

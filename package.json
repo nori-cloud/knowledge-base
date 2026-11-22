@@ -9,7 +9,7 @@
     "start": "next start",
     "types:check": "next typegen && tsc --noEmit",
     "lint": "biome check",
-    "content:check": "node scripts/check-content.mjs && node --test scripts/check-source-docs.test.mjs src/lib/sources/links.test.ts",
+    "content:check": "node scripts/check-content.mjs && node --test scripts/check-source-docs.test.mjs src/sources/utils/links.test.ts src/system/config.test.ts",
     "sanity": "pnpm lint && pnpm content:check && pnpm types:check && pnpm build",
     "format": "biome format --write"
   },

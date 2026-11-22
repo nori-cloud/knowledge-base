@@ -66,13 +66,19 @@ configuration, keeping existing entries:
 }
 ```
 
-Remote sources are listed in [`sources.json`](sources.json). Each public GitHub
+Remote sources are listed in [`src/sources/factory.ts`](src/sources/factory.ts). Each public GitHub
 repository contributes Markdown from its `docs/` folder under its configured
-mount. The server checks for updates roughly every 10 minutes; pages, search,
+mount. The server checks for updates on the first request after the refresh
+interval expires; pages, search,
 Ask AI, and LLM exports share the refreshed source. GitHub API rate limits may
 require a server-side `GITHUB_TOKEN`. If a refresh fails, the last successful
 copy remains available in that server process; a cold start has no cached copy.
 Remote Markdown is rendered without MDX or raw HTML.
+
+Set `SOURCE_REFRESH_INTERVAL_MS` to a positive integer to change the refresh
+interval, in milliseconds. It defaults to `600000` (10 minutes). For example,
+set it to `60000` for one minute. Configuration is validated at server startup;
+restart the process after changing environment variables.
 
 ## How is it delivered?
 
