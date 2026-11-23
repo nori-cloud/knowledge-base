@@ -1,5 +1,5 @@
 ---
-name: set-up-knowledge-base
+name: set-up-docs
 title: Set up a repository for Knowledge Base
 description: Structure a repository's docs/ folder so Knowledge Base can load and publish it, including the landing page, frontmatter, relative links, and a convention check.
 ---
@@ -57,8 +57,15 @@ Order and naming follow Fumadocs conventions: `index.md` is a folder's landing p
 ## How is the repository published?
 
 Knowledge Base owns where each repository appears. Register it by adding an entry to
-Knowledge Base's `src/sources/factory.ts` with the repository, branch, and mount path, such as
-`nori-cloud/actions` mounted at `projects/actions`. That is a separate pull request
+Knowledge Base's `src/sources/factory.ts` with these fields:
+
+- `repo`: `owner/name`, such as `nori-cloud/actions`.
+- `ref`: branch, defaults to `main`.
+- `mount`: lowercase kebab-case path, such as `projects/actions`.
+- `title`: required section name in the sidebar, such as `Actions`. A `title` in
+  the repository's `docs/meta.json` takes precedence.
+
+That is a separate pull request
 in Knowledge Base; never invent mount paths in the source repository.
 
 ## Is there any external references to this documentation?
