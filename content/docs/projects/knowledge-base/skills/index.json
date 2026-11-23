@@ -1,8 +1,8 @@
 {
   "skills": [
     {
-      "name": "set-up-knowledge-base",
-      "version": "2",
+      "name": "set-up-docs",
+      "version": "3",
       "files": ["SKILL.md"]
     }
   ]
