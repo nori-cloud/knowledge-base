@@ -27,6 +27,12 @@ const sources = [
     mount: "projects/actions",
     title: "Actions",
   },
+  {
+    repo: "nori-cloud/koukou",
+    ref: "main",
+    mount: "projects/koukou",
+    title: "Koukou",
+  },
 ];
 
 export class SourceFactory {
